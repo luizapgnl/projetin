@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Casamento | Loquinha</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header-section">
+            <div class="header-image-box">
+                <img src="img/loquinha.jpg" alt="Loquinha Banner">
+            </div>
+            <div class="header-text-box">
+                <h1>Loquinha's Wedding Gift List</h1>
+                <p class="couple-names">Lorena Esteves Ferette & Eduarda Fragoso</p>
+            </div>
+        </header>
+
+        <nav class="tabs-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'casal')">O Casal & Presentes</button>
+            <button class="tab-btn" onclick="openTab(event, 'lorena')">Sobre a Lorena</button>
+            <button class="tab-btn" onclick="openTab(event, 'juquinha')">Sobre a Eduarda</button>
+        </nav>
+
+        <main>
+            
+            <div id="casal" class="tab-content active">
+                <section class="gallery-section">
+                    <div class="carousel-container">
+                        <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+                        <div class="carousel-track-wrapper">
+                            <div class="carousel-track" id="carouselTrack">
+                                <div class="carousel-slide"><img src="https://i.pinimg.com/736x/0e/bd/a8/0ebda84095c87ea3cade2542de39fdb7.jpg" alt="Foto 1"></div>
+                                <div class="carousel-slide"><img src="https://i.pinimg.com/1200x/2b/e4/f1/2be4f19c2b1d1540cf8f2a6cafe5a25d.jpg" alt="Foto 2"></div>
+                                <div class="carousel-slide"><img src="https://i.pinimg.com/736x/9a/2f/fd/9a2ffdb4771003a2b0ad1fcfafa2495d.jpg" alt="Foto 3"></div>
+                                <div class="carousel-slide"><img src="img/naagua.jpg" alt="Foto 4"></div>
+                                <div class="carousel-slide"><img src="img/praia.jpg" alt="Foto 5"></div>
+                                <div class="carousel-slide"><img src="img/cdj.jpg" alt="Foto 6"></div>
+                                <div class="carousel-slide"><img src="img/casamento1.jpg" alt="Foto 7"></div>
+                                <div class="carousel-slide"><img src="img/casamento2.jpg" alt="Foto 8"></div>
+                            </div>
+                        </div>
+                        <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+                        <p class="carousel-caption">Our Story: In Pictures</p>
+                    </div>
+                    
+                    <div class="grid-thumbs">
+                        <img src="img/nucarro.jpg" alt="Thumbnail 1">
+                        <img src="https://i.pinimg.com/736x/2c/cc/2a/2ccc2ad8eb0000a03aac8b743ef2f402.jpg" alt="Thumbnail 2">
+                        <img src="img/aliança.jpg" alt="Thumbnail 3">
+                        <img src="img/sushi.jpg" alt="Thumbnail 4">
+                    </div>
+                </section>
+
+                <div class="cart-floating-btn" onclick="toggleCartModal()">
+                    🛒 Meu Carrinho <span id="cartCount">0</span>
+                </div>
+
+                <section class="gifts-section">
+                    <div class="gift-grid">
+                        <article class="gift-card">
+                            <div class="icon">👠</div>
+                            <h3>Sapatinho das Noivas</h3>
+                            <p>Para garantir a sorte e muita diversão na festa!</p>
+                            <div class="custom-price-box">
+                                <label for="shoePrice">Digite o valor (R$):</label>
+                                <input type="number" id="shoePrice" value="200" min="10" step="10" class="shoe-input">
+                            </div>
+                            <button class="add-cart-btn" onclick="addShoeToCart()">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">♟️</div>
+                            <h3>Noite de Jogos & Xadrez</h3>
+                            <p>Para as disputas acirradas e divertidas entre o casal!</p>
+                            <span class="price">R$ 120</span>
+                            <button class="add-cart-btn" onclick="addToCart('Noite de Jogos & Xadrez', 120)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">🍫</div>
+                            <h3>Kit Chocolates Veganos</h3>
+                            <p>O doce segredo para conquistar o coração da detetive!</p>
+                            <span class="price">R$ 95</span>
+                            <button class="add-cart-btn" onclick="addToCart('Kit Chocolates Veganos', 95)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">🐾</div>
+                            <h3>Ração Premium para o Boris</h3>
+                            <p>Alimentando o Boss!</p>
+                            <span class="price">R$ 150</span>
+                            <button class="add-cart-btn" onclick="addToCart('Ração Premium para o Boris', 150)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">💆‍♀️</div>
+                            <h3>Spa Day para a Lorena</h3>
+                            <p>Recarregando a Criatividade da nossa Escritora</p>
+                            <span class="price">R$ 450</span>
+                            <button class="add-cart-btn" onclick="addToCart('Spa Day para a Lorena', 450)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">💆‍♀️</div>
+                            <h3>Spa Day para a Juquinha</h3>
+                            <p>Para voltar zen, a Delegacia dos Apaixonados...</p>
+                            <span class="price">R$ 450</span>
+                            <button class="add-cart-btn" onclick="addToCart('Spa Day para a Lorena', 450)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">🔎</div>
+                            <h3>Folga para a Juquinha</h3>
+                            <p>Um dia sem resolver crimes!</p>
+                            <span class="price">R$ 300</span>
+                            <button class="add-cart-btn" onclick="addToCart('Folga para a Juquinha', 300)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">🧦</div>
+                            <h3>Tudo Meia!</h3>
+                            <p>Uma montanha de meias felizes</p>
+                            <span class="price">R$ 100</span>
+                            <button class="add-cart-btn" onclick="addToCart('Tudo Meia!', 100)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">👚</div>
+                            <h3>Tudo Listra!</h3>
+                            <p>Para aumentar a coleção da Lorena</p>
+                            <span class="price">R$ 180</span>
+                            <button class="add-cart-btn" onclick="addToCart('Tudo Meia!', 100)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">📴</div>
+                            <h3>DAY OFF</h3>
+                            <p>Um dia do Bóris na casa dos avós!</p>
+                            <span class="price">R$ 90</span>
+                            <button class="add-cart-btn" onclick="addToCart('Lanterna Encontre o Culpado', 90)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">☕️</div>
+                            <h3>Assinatura de Café</h3>
+                            <p>'Noites de Escrita & Investigação'</p>
+                            <span class="price">R$ 250</span>
+                            <button class="add-cart-btn" onclick="addToCart('Assinatura de Café', 250)">Adicionar</button>
+                        </article>
+
+                        <article class="gift-card">
+                            <div class="icon">🍝</div>
+                            <h3>'Jantar dos Suspeitos'</h3>
+                            <p>(Aula de Culinária em Dupla) com pista!</p>
+                            <span class="price">R$ 380</span>
+                            <button class="add-cart-btn" onclick="addToCart('Jantar dos Suspeitos', 380)">Adicionar</button>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <div id="lorena" class="tab-content">
+                <section class="profile-header">
+                    <h2>Lorena Esteves Ferette</h2>
+                    <p class="profile-sub">A Escritora 📖✍️</p>
+                    <p class="profile-bio">Mente criativa por trás das histórias, poetisa formada em Letras e escritora — com direito a participação no livro <i>Poesias Sáficas</i>. Apaixonada por café, momentos tranquilos de inspiração, noites de escrita intensa, um bom draminha e partidas de xadrez. Mãe do Boris e completamente apaixonada por sua esposa e pelo veganismo.</p>
+                </section>
+
+                <section class="individual-gallery">
+                    <h3>Sessão de Fotos — Lorena Esteves Ferette</h3>
+                    <div class="photo-grid-8">
+                        <div class="photo-item"><img src="img/fotolorena.jpg" alt="Lorena Foto 1"></div>
+                        <div class="photo-item"><img src="img/lorenacarro.jpg" alt="Lorena Foto 2"></div>
+                        <div class="photo-item"><img src="img/lorenadate.jpg" alt="Lorena Foto 3"></div>
+                        <div class="photo-item"><img src="img/lorenajuma.jpg" alt="Lorena Foto 4"></div>
+                        <div class="photo-item"><img src="img/lorenalistra.jpg" alt="Lorena Foto 5"></div>
+                        <div class="photo-item"><img src="img/lorenashow.jpg" alt="Lorena Foto 6"></div>
+                        <div class="photo-item"><img src="img/lorenashow2.jpg" alt="Lorena Foto 7"></div>
+                        <div class="photo-item"><img src="img/lorenaxadrez.jpg" alt="Lorena Foto 8"></div>
+                        <div class="photo-item"><img src="img\alanisamstel.jpeg" alt="Lorena Foto 9"></div>
+                        <div class="photo-item"><img src="https://i.pinimg.com/736x/de/76/96/de7696fdd765ca5f08c1d5cd4d7f8809.jpg" alt="Lorena Foto 9"></div>
+                        <div class="photo-item"><img src="https://i.pinimg.com/736x/98/51/50/985150385c4a87aa81265d4f85999e84.jpg" alt="Lorena Foto 10"></div>
+                        <div class="photo-item"><img src="https://i.pinimg.com/1200x/bc/33/08/bc3308e2534263a72c5e562b0d0b5633.jpg" alt="Lorena Foto 11"></div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="juquinha" class="tab-content">
+                <section class="profile-header">
+                    <h2>Eduarda Fragoso (Juquinha)</h2>
+                    <p class="profile-sub">A Detetive 🕵️‍♀️🔍</p>
+                    <p class="profile-bio">Especialista em desvendar mistérios, encontrar coisas perdidas pela casa e garantir a segurança do lar contra suspeitos misteriosos. Engraçadinha e perdidamente apaixonada pela mulher, a quem conquistou com chocolates veganos. Filha única, detetive da Delegacia dos Apaixonados e mãe do Boris, ama ficar de chamego e cozinhar para a Lorena.</p>
+                </section>
+
+                <section class="individual-gallery">
+                    <h3>Sessão de Fotos — Juquinha</h3>
+                    <div class="photo-grid-8">
+                        <div class="photo-item"><img src="img/dudabuqe.jpg" alt="Juquinha Foto 1"></div>
+                        <div class="photo-item"><img src="img/dudadefarda.jpg" alt="Juquinha Foto 2"></div>
+                        <div class="photo-item"><img src="https://i.pinimg.com/736x/d7/0a/b8/d70ab8220b8dbed27e6b3b2b5ba948ee.jpg" alt="Juquinha Foto 3"></div>
+                        <div class="photo-item"><img src="img/eduardadelegacia.jpg" alt="Juquinha Foto 4"></div>
+                        <div class="photo-item"><img src="img/eduardamaggye.jpg" alt="Juquinha Foto 5"></div>
+                        <div class="photo-item"><img src="img/eduardatenis.jpg" alt="Juquinha Foto 6"></div>
+                        <div class="photo-item"><img src="img/eduardatesoura.jpg" alt="Juquinha Foto 7"></div>
+                        <div class="photo-item"><img src="img/fotoeduarda.jpg" alt="Juquinha Foto 8"></div>
+                        <div class="photo-item"><img src="img\gabedecasa.jpeg" alt="Juquinha Foto 9"></div>
+                        <div class="photo-item"><img src="img\gabelevador.jpeg" alt="Juquinha Foto 10"></div>
+                        <div class="photo-item"><img src="img\gabisentada.jpeg" alt="Juquinha Foto 11"></div>
+                        <div class="photo-item"><img src="img\gabenrolada.jpeg" alt="Juquinha 12"></div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="cartModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleCartModal()">&times;</span>
+            <h2>Seu Carrinho de Presentes</h2>
+            <div id="cartItemsList" class="cart-items-container">
+                <p>O carrinho está vazio.</p>
+            </div>
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotalSum">0</span></strong>
+            </div>
+
+            <div class="payment-section">
+                <h3>Escolha a Forma de Pagamento</h3>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment" value="pix" checked onclick="selectPayment('pix')"> Pix</label>
+                    <label><input type="radio" name="payment" value="debito" onclick="selectPayment('debito')"> Débito</label>
+                    <label><input type="radio" name="payment" value="credito" onclick="selectPayment('credito')"> Cartão de Crédito</label>
+                </div>
+
+                <div id="pixDetails" class="payment-details active">
+                    <p>Chave Pix: <strong>12.345.678/0001-99</strong></p>
+                    <div class="qrcode-container">
+                        <svg class="qr-code-svg" viewBox="0 0 100 100" width="120" height="120">
+                            <rect width="100" height="100" fill="#fff"/>
+                            <path d="M10 10h25v25h-25zM15 15h15v15h-15zM65 10h25v25h-25zM70 15h15v15h-15zM10 65h25v25h-25zM15 70h15v15h-15zM40 10h10v10h-10zM55 10h5v15h-5zM40 25h15v10h-15zM65 40h10v10h-10zM40 40h15v15h-15zM10 40h15v10h-15zM25 55h15v5h-15zM80 50h10v15h-10zM50 65h15v10h-15zM75 65h15v25h-15zM40 80h10v10h-10zM55 80h10v10h-10z" fill="#3b3532"/>
+                        </svg>
+                    </div>
+                    <p class="pix-hint">Aponte a câmera do seu celular para escanear ou copie a chave acima.</p>
+                </div>
+                <div id="cardDetails" class="payment-details">
+                    <input type="text" placeholder="Número do Cartão" class="card-input">
+                    <div class="card-row">
+                        <input type="text" placeholder="MM/AA" class="card-input">
+                        <input type="text" placeholder="CVV" class="card-input">
+                    </div>
+                </div>
+
+                <button class="checkout-btn" onclick="finalizePayment()">Finalizar Presente</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            
+            const track = document.getElementById('carouselTrack');
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        let cart = [];
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name && item.price === price);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function addShoeToCart() {
+            const inputVal = document.getElementById('shoePrice').value;
+            const price = parseFloat(inputVal);
+            if (isNaN(price) || price <= 0) return;
+            
+            const name = 'Sapatinho das Noivas';
+            const existingItem = cart.find(item => item.name === name && item.price === price);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function changeQuantity(index, amount) {
+            cart[index].quantity += amount;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            let totalCount = 0;
+            cart.forEach(item => totalCount += item.quantity);
+            document.getElementById('cartCount').innerText = totalCount;
+            
+            const container = document.getElementById('cartItemsList');
+            container.innerHTML = '';
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p>O carrinho está vazio.</p>';
+                document.getElementById('cartTotalSum').innerText = '0';
+                return;
+            }
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                container.innerHTML += `
+                    <div class="cart-item">
+                        <span>${item.name} (R$ ${item.price})</span>
+                        <div class="qty-controls">
+                            <button onclick="changeQuantity(${index}, -1)" class="qty-btn">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity(${index}, 1)" class="qty-btn">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('cartTotalSum').innerText = total;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function selectPayment(method) {
+            const pix = document.getElementById('pixDetails');
+            const card = document.getElementById('cardDetails');
+            if (method === 'pix') {
+                pix.classList.add('active');
+                card.classList.remove('active');
+            } else {
+                pix.classList.remove('active');
+                card.classList.add('active');
+            }
+        }
+
+        function finalizePayment() {
+            if (cart.length === 0) return;
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+        }
+    </script>
+</body>
+</html>
